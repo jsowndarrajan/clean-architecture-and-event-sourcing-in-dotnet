@@ -2,4 +2,8 @@
 
 ## Meeting Scheduler
 
-The `meeting scheduler` is a reference solution for building dotnet application by using Clean Architecture and Event Sourcing principles.
+It is a reference solution for building dotnet web API by using Clean Architecture and Event Sourcing principles.
+
+### Project Dependencies
+
+![Project Dependencies](diagrams/project-dependencies.jpg)
