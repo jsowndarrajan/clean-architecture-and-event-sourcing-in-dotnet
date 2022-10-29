@@ -19,11 +19,13 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 6.0.x
-    - working-directory: MeetingScheduler
+        dotnet-version: 6.0.x       
     - name: Restore dependencies
       run: dotnet restore
+      working-directory: MeetingScheduler
     - name: Build
       run: dotnet build --no-restore
+      working-directory: MeetingScheduler
     - name: Test
       run: dotnet test --no-build --verbosity normal
+      working-directory: MeetingScheduler
