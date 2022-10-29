@@ -1,4 +1,4 @@
-# Clean Architecture and Event Sourcing application in dotnet
+# Clean Architecture and Event Sourcing in dotnet
 
 ## Meeting Scheduler
 
