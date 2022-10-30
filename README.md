@@ -8,4 +8,4 @@ It is a reference solution for building dotnet web API by using Clean Architectu
 
 ### Project Dependencies
 
-![Project Dependencies](diagrams/project-dependencies.jpg)
+![Project Dependencies](diagrams/project-references.jpg)
