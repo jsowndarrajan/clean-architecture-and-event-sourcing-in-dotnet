@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetingScheduler.Api", "MeetingScheduler.Api\MeetingScheduler.Api.csproj", "{E374DF46-311F-4154-8A8B-49A45ED9B4F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeetingScheduler.Api", "MeetingScheduler.Api\MeetingScheduler.Api.csproj", "{E374DF46-311F-4154-8A8B-49A45ED9B4F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetingScheduler.Application", "MeetingScheduler.Application\MeetingScheduler.Application.csproj", "{84EA7115-BDCC-47CF-ADFF-F0808330F71C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeetingScheduler.Application", "MeetingScheduler.Application\MeetingScheduler.Application.csproj", "{84EA7115-BDCC-47CF-ADFF-F0808330F71C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetingScheduler.Domain", "MeetingScheduler.Domain\MeetingScheduler.Domain.csproj", "{B5B6A2DC-7B69-4C52-8FBE-B6A23A20124D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeetingScheduler.Domain", "MeetingScheduler.Domain\MeetingScheduler.Domain.csproj", "{B5B6A2DC-7B69-4C52-8FBE-B6A23A20124D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetingScheduler.Infrastructure", "MeetingScheduler.Infrastructure\MeetingScheduler.Infrastructure.csproj", "{6EE45EC1-31E8-4977-8D61-2963E2963073}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeetingScheduler.Infrastructure", "MeetingScheduler.Infrastructure\MeetingScheduler.Infrastructure.csproj", "{6EE45EC1-31E8-4977-8D61-2963E2963073}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeetingScheduler.Domain.Tests", "MeetingScheduler.Domain.Tests\MeetingScheduler.Domain.Tests.csproj", "{9E8E42DD-6ECF-45DC-9CEA-0E23C3397EAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{6EE45EC1-31E8-4977-8D61-2963E2963073}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EE45EC1-31E8-4977-8D61-2963E2963073}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EE45EC1-31E8-4977-8D61-2963E2963073}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E8E42DD-6ECF-45DC-9CEA-0E23C3397EAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E8E42DD-6ECF-45DC-9CEA-0E23C3397EAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E8E42DD-6ECF-45DC-9CEA-0E23C3397EAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E8E42DD-6ECF-45DC-9CEA-0E23C3397EAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
