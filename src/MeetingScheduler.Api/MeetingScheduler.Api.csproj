@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MeetingScheduler.Application\MeetingScheduler.Application.csproj" />
+    <ProjectReference Include="..\MeetingScheduler.Infrastructure\MeetingScheduler.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
