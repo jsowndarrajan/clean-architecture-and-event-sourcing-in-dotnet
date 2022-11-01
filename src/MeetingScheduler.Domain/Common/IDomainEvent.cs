@@ -4,4 +4,5 @@ public interface IDomainEvent
 {
     Guid AggregateRootId { get; }
     int Version { get; }
+    DateTimeOffset Timestamp { get; }
 }

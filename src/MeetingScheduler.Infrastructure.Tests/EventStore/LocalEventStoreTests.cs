@@ -1,5 +1,6 @@
 ﻿using FluentAssertions;
 using MeetingScheduler.Domain.Meetings.Events;
+using MeetingScheduler.Domain.ValueObjects;
 using MeetingScheduler.Infrastructure.Gateways;
 
 namespace MeetingScheduler.Infrastructure.Tests.EventStore;
@@ -19,7 +20,13 @@ public class LocalEventStoreTests
     public void SavedDomainEventShouldBeReturnedForValidAggregateId()
     {
         var aggregateRootId = Guid.NewGuid();
-        var domainEvent = new MeetingScheduledEvent(aggregateRootId, 0);
+        var domainEvent = new MeetingScheduledEvent(
+            aggregateRootId,
+            0,
+            "Tech Talks",
+            new TimeRange(DateTime.Now, DateTime.Now.AddHours(1)),
+            new EmailAddress[] { "test1@test.com", "test2@test.com" },
+            "organizer@test.com");
 
         _localEventStore.Save(domainEvent);
 
@@ -44,8 +51,17 @@ public class LocalEventStoreTests
     public void DomainEventShouldBeAppendedWhileSavingDomainEventWithTheExistingAggregateRootId()
     {
         var aggregateRootId = Guid.NewGuid();
-        var scheduledEvent = new MeetingScheduledEvent(aggregateRootId, 0);
-        var startedEvent = new MeetingStartedEvent(aggregateRootId, 1);
+        var scheduledEvent = new MeetingScheduledEvent(
+            aggregateRootId,
+            0,
+            "Tech Talks",
+            new TimeRange(DateTime.Now, DateTime.Now.AddHours(1)),
+            new EmailAddress[] { "test1@test.com", "test2@test.com" },
+            "organizer@test.com");
+        var startedEvent = new MeetingStartedEvent(
+            aggregateRootId,
+            1,
+            "organizer@test.com");
 
         _localEventStore.Save(scheduledEvent);
         _localEventStore.Save(startedEvent);

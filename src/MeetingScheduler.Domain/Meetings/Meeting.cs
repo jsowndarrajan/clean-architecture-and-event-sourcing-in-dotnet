@@ -3,13 +3,12 @@ using MeetingScheduler.Domain.ValueObjects;
 
 namespace MeetingScheduler.Domain.Meetings
 {
-    public class Meeting : IEntity
+    public class Meeting : AggregateRoot
     {
-        public Guid Id { get; set; }
-        public string Title { get; set; }
-        public TimeRange TimeRange { get; set; }
-        public IEnumerable<string> Attendees { get; set; }
-        public IEnumerable<string> Organizer { get; set; }
-        public MeetingStatus Status { get; set; }
+        public Title Title { get; }
+        public TimeRange TimeRange { get; }
+        public IEnumerable<EmailAddress> Attendees { get; }
+        public EmailAddress Organizer { get; }
+        public MeetingStatus Status { get; }
     }
 }

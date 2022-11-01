@@ -2,6 +2,8 @@
 
 public enum MeetingStatus
 {
+    Scheduled,
+    Cancelled,
     Started,
     Active,
     Ended

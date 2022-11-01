@@ -1,12 +1,10 @@
-﻿using MeetingScheduler.Domain.Common;
-
-namespace MeetingScheduler.Domain.ValueObjects;
+﻿namespace MeetingScheduler.Domain.ValueObjects;
 
 public record TimeRange
 {
-    public DateTime Start { get; init; }
+    public DateTime Start { get; }
 
-    public DateTime End { get; init; }
+    public DateTime End { get; }
 
     public TimeSpan Duration => End.Subtract(Start);
 

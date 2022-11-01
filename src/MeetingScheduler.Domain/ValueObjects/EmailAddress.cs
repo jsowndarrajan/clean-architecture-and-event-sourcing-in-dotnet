@@ -2,9 +2,9 @@
 
 namespace MeetingScheduler.Domain.ValueObjects;
 
-public class EmailAddress
+public record EmailAddress
 {
-    public string Value { get; set; }
+    public string Value { get; }
 
     public EmailAddress(string emailAddress)
     {
