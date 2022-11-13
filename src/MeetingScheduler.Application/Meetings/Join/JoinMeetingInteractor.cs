@@ -14,6 +14,6 @@ public class JoinMeetingInteractor : IInputBoundary<JoinMeetingInput>
     public async Task Process(JoinMeetingInput request)
     {
         await Task.FromResult(0);
-        this._outputBoundary.Populate(new JoinMeetingOutput());
+        _outputBoundary.Populate(new JoinMeetingOutput());
     }
 }
