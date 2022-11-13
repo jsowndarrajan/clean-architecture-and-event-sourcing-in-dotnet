@@ -6,16 +6,17 @@ namespace MeetingScheduler.Domain.Meetings.Events;
 public class MeetingScheduledEvent : IDomainEvent
 {
     public Guid AggregateRootId { get; }
-    public int Version { get; }
+    public long Version { get; }
     public Title Title { get; }
     public TimeRange TimeRange { get; }
     public IEnumerable<EmailAddress> Attendees { get; }
     public EmailAddress Organizer { get; }
     public DateTimeOffset Timestamp { get; }
+    public MeetingStatus Status { get; set; }
 
     public MeetingScheduledEvent(
         Guid aggregateRootId,
-        int version,
+        long version,
         Title title,
         TimeRange timeRange,
         IEnumerable<EmailAddress> attendees,
@@ -28,5 +29,6 @@ public class MeetingScheduledEvent : IDomainEvent
         Attendees = attendees;
         Organizer = organizer;
         Timestamp = DateTimeOffset.UtcNow;
+        Status = MeetingStatus.Scheduled;
     }
 }

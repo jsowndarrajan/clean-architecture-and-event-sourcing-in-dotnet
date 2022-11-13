@@ -5,7 +5,7 @@ using Swashbuckle.AspNetCore.Annotations;
 
 namespace MeetingScheduler.Api.Meetings.Schedule;
 
-public class ScheduleMeeting : EndpointBaseAsync
+public class ScheduleEndpoint : EndpointBaseAsync
     .WithRequest<ScheduleMeetingInput>
     .WithActionResult<ScheduleMeetingOutput>
 {
@@ -16,10 +16,12 @@ public class ScheduleMeeting : EndpointBaseAsync
         OperationId = "Meetings.Schedule",
         Tags = new[] { "Meetings Endpoint" })
     ]
-    public override Task<ActionResult<ScheduleMeetingOutput>> HandleAsync(
+    public override async Task<ActionResult<ScheduleMeetingOutput>> HandleAsync(
         ScheduleMeetingInput request,
         CancellationToken cancellationToken = new CancellationToken())
     {
-        throw new NotImplementedException();
+        await Task.FromResult(0);
+
+        return new ScheduleMeetingOutput();
     }
 }

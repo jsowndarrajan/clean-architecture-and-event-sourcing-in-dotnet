@@ -6,7 +6,7 @@ namespace MeetingScheduler.Domain.Meetings.Events;
 public class MeetingStartedEvent: IDomainEvent
 {
     public Guid AggregateRootId { get; }
-    public int Version { get; }
+    public long Version { get; }
     public EmailAddress StartedBy { get; }
     public DateTimeOffset Timestamp { get; }
 

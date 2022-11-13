@@ -3,6 +3,6 @@
 public interface IDomainEvent
 {
     Guid AggregateRootId { get; }
-    int Version { get; }
+    long Version { get; }
     DateTimeOffset Timestamp { get; }
 }
