@@ -1,5 +1,5 @@
 using MeetingScheduler.Application;
-using MeetingScheduler.Application.Adapters;
+using MeetingScheduler.Application.Contracts;
 using MeetingScheduler.Application.Meetings.Join;
 using MeetingScheduler.Application.Meetings.Leave;
 using MeetingScheduler.Application.Meetings.Schedule;

@@ -1,4 +1,4 @@
-﻿using MeetingScheduler.Application.Adapters;
+﻿using MeetingScheduler.Application.Contracts;
 using MeetingScheduler.Application.Meetings.Start;
 
 namespace MeetingScheduler.Api.Meetings.Start;

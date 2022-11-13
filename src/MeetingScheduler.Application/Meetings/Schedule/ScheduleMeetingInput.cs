@@ -1,4 +1,4 @@
-﻿namespace MeetingScheduler.Api.Meetings.Schedule;
+﻿namespace MeetingScheduler.Application.Meetings.Schedule;
 
 public class ScheduleMeetingInput
 {

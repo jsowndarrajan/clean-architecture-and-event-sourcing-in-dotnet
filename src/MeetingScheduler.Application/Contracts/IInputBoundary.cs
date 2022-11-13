@@ -1,4 +1,4 @@
-﻿namespace MeetingScheduler.Application.Adapters;
+﻿namespace MeetingScheduler.Application.Contracts;
 
 public interface IInputBoundary<in T>
 {

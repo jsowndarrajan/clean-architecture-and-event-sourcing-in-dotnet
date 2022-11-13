@@ -1,5 +1,5 @@
 ﻿using Ardalis.ApiEndpoints;
-using MeetingScheduler.Application.Adapters;
+using MeetingScheduler.Application.Contracts;
 using MeetingScheduler.Application.Meetings.Leave;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
