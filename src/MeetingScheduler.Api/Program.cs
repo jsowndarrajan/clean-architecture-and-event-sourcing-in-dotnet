@@ -1,6 +1,8 @@
 using MeetingScheduler.Application;
 using MeetingScheduler.Application.Adapters;
 using MeetingScheduler.Application.Meetings.Join;
+using MeetingScheduler.Application.Meetings.Leave;
+using MeetingScheduler.Application.Meetings.Schedule;
 using Microsoft.OpenApi.Models;
 
 namespace MeetingScheduler.Api;
@@ -20,6 +22,8 @@ public class Program
         });
 
         builder.Services.AddTransient<IOutputBoundary<JoinMeetingOutput>, Meetings.Join.Presenter>();
+        builder.Services.AddTransient<IOutputBoundary<LeaveMeetingOutput>, Meetings.Leave.Presenter>();
+        builder.Services.AddTransient<IOutputBoundary<ScheduleMeetingOutput>, Meetings.Schedule.Presenter>();
 
         builder.Services.AddApplicationLayer();
 
