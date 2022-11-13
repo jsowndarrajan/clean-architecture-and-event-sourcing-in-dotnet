@@ -1,4 +1,5 @@
 ﻿using Ardalis.ApiEndpoints;
+using MeetingScheduler.Application.Adapters;
 using MeetingScheduler.Application.Meetings.Start;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
@@ -9,6 +10,17 @@ public class StartEndpoint : EndpointBaseAsync
     .WithRequest<StartMeetingInput>
     .WithActionResult<StartMeetingOutput>
 {
+    private readonly IInputBoundary<StartMeetingInput> _inputBoundary;
+    private readonly IOutputBoundary<StartMeetingOutput> _outputBoundary;
+
+    public StartEndpoint(
+        IInputBoundary<StartMeetingInput> inputBoundary,
+        IOutputBoundary<StartMeetingOutput> presenter)
+    {
+        _inputBoundary = inputBoundary;
+        _outputBoundary = presenter;
+    }
+
     [HttpPost("api/meetings/start")]
     [SwaggerOperation(
         Summary = "Start",
@@ -20,8 +32,7 @@ public class StartEndpoint : EndpointBaseAsync
         StartMeetingInput request,
         CancellationToken cancellationToken = new CancellationToken())
     {
-        await Task.FromResult(0);
-
-        return new StartMeetingOutput();
+        await _inputBoundary.Process(request);
+        return _outputBoundary.Output;
     }
 }

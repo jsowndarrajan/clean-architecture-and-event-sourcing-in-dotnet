@@ -5,10 +5,10 @@ namespace MeetingScheduler.Api.Meetings.Schedule;
 
 public class Presenter : IOutputBoundary<ScheduleMeetingOutput>
 {
-    public ScheduleMeetingOutput Output { get; }
+    public ScheduleMeetingOutput Output { get; private set; }
 
     public void Populate(ScheduleMeetingOutput response)
     {
-        throw new NotImplementedException();
+        Output = response;
     }
 }

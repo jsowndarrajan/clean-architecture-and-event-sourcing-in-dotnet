@@ -1,4 +1,5 @@
 ﻿using Ardalis.ApiEndpoints;
+using MeetingScheduler.Application.Adapters;
 using MeetingScheduler.Application.Meetings.Leave;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
@@ -9,6 +10,17 @@ namespace MeetingScheduler.Api.Meetings.Leave
         .WithRequest<LeaveMeetingInput>
         .WithActionResult<LeaveMeetingOutput>
     {
+        private readonly IInputBoundary<LeaveMeetingInput> _inputBoundary;
+        private readonly IOutputBoundary<LeaveMeetingOutput> _outputBoundary;
+
+        public LeaveEndpoint(
+            IInputBoundary<LeaveMeetingInput> inputBoundary,
+            IOutputBoundary<LeaveMeetingOutput> presenter)
+        {
+            _inputBoundary = inputBoundary;
+            _outputBoundary = presenter;
+        }
+
         [HttpPost("api/meetings/leave")]
         [SwaggerOperation(
             Summary = "Leave",
@@ -20,9 +32,8 @@ namespace MeetingScheduler.Api.Meetings.Leave
             LeaveMeetingInput request,
             CancellationToken cancellationToken = new CancellationToken())
         {
-            await Task.FromResult(0);
-
-            return new LeaveMeetingOutput();
+            await _inputBoundary.Process(request);
+            return _outputBoundary.Output;
         }
     }
 }
